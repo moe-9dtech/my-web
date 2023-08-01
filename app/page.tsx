@@ -1,9 +1,21 @@
 import Image from 'next/image'
+import Hero from './components/hero'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>clean app</p>
+    <main className="max-w-7xl mx-auto p-2">
+      {/* Hero */}
+      <Hero/>
+
+      {/* About */}
+
+      {/* Eperience */}
+
+      {/* Skills */}
+
+      {/* Projects */}
+
+      {/* Contact Me */}
     </main>
   )
 }
