@@ -3,9 +3,11 @@ import Hero from './components/hero'
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto p-2">
+    <main className="h-screen snap-y snap-mandatory overflow-scroll z-0">
       {/* Hero */}
-      <Hero/>
+      <section id='hero' className='snap-center bg-transparent'>
+        <Hero/>
+      </section>
 
       {/* About */}
 
