@@ -1,9 +1,14 @@
-import React from 'react'
-
-type Props = {}
+'use client';
+import AboutImage from "@/user-components/about-image";
+import React from "react";
+type Props = {};
 
 export default function About({}: Props) {
   return (
-    <div>About</div>
-  )
+    <div className="h-screen flex flex-col relative text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">About</h3>
+      <AboutImage/>
+      
+    </div>
+  );
 }
