@@ -4,9 +4,9 @@ import About from './components/about'
 
 export default function Home() {
   return (
-    <main className="h-screen bg-[rgb(36,36,36)] snap-y snap-mandatory overflow-scroll z-0">
+    <main className="h-screen bg-[rgb(36,36,36)] snap-y snap-mandatory scroll-smooth overflow-scroll z-0">
       {/* Hero */}
-      <section id='hero' className='snap-start'>
+      <section id='hero' className='snap-center'>
         <Hero/>
       </section>
 
