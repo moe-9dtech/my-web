@@ -11,8 +11,8 @@ export default function Typer({}: Props) {
         delaySpeed: 2000,
     });
   return (
-    <h1>
-        <span>{text}</span>
+    <h1 className='text-5xl lg:text-6xl font-semibold px-10 z-20'>
+        <span className='mr-3'>{text}</span>
         <Cursor cursorColor='#D3FBD8'/>
     </h1>
   )
