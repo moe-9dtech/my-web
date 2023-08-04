@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import developerImage from "@/app/assets/titan.jpg";
+// import developerImage from "@/app/assets/titan.jpg";
+import developerImage from "../public/assets/titan.jpg";
 type Props = {};
 
 export default function AboutImage({}: Props) {
@@ -22,14 +23,14 @@ export default function AboutImage({}: Props) {
           duration: 1.2,
         }}
       >
-        {/* <Image
+        <Image
           className="mt-[150px] md:mt-0 flex-shrink-0 object-cover rounded-full h-56 w-56 md:w-64 md:h-96 md:rounded-lg xl:w-[500px] xl:h-[600px]"
           src={developerImage}
           height={300}
           width={300}
           alt="about image"
-        /> */}
-        <img className="mt-[150px] md:mt-0 flex-shrink-0 object-cover rounded-full h-56 w-56 md:h-95 md:w-64 md:rounded-lg xl:w-[500px] xl:h-[600px]" src="/assets/titan.jpg" alt="" />
+        />
+        {/* <img className="mt-[150px] md:mt-0 flex-shrink-0 object-cover rounded-full h-56 w-56 md:h-95 md:w-64 md:rounded-lg xl:w-[500px] xl:h-[600px]" src="/assets/titan.jpg" alt="" /> */}
       </motion.div>
       <motion.div
       initial={{

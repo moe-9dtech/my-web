@@ -1,20 +1,22 @@
-import Image from 'next/image'
 import Hero from './components/hero'
 import About from './components/about'
+import Experience from './components/experience'
 
 export default function Home() {
+  // h-screen snap-y snap-mandatory scroll-smooth overflow-scroll z-0
   return (
-    <main className="h-screen bg-[rgb(36,36,36)] snap-y snap-mandatory scroll-smooth overflow-scroll z-0">
-      {/* Hero */}
-      <section id='hero' className='snap-center'>
+    <main className="h-screen z-0">
+      <section id='hero' className='snap-start'>
         <Hero/>
       </section>
 
-      {/* About */}
       <section id='about' className='snap-center'>
         <About/>
       </section>
-      {/* Eperience */}
+
+      <section id='experience' className="snap-center">
+        <Experience/>
+      </section>
 
       {/* Skills */}
 

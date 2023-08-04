@@ -2,7 +2,7 @@ import Circles from "@/user-components/circles";
 import Typer from "@/user-components/typer";
 import Image from "next/image";
 import React from "react";
-import developerImage from "../assets/titan.jpg";
+import developerImage from "@/public/assets/titan.jpg";
 import Link from "next/link";
 
 type Props = {};
