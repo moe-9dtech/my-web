@@ -1,6 +1,7 @@
 import Hero from './components/hero'
 import About from './components/about'
 import Experience from './components/experience'
+import Skills from './components/skills'
 
 export default function Home() {
   // h-screen snap-y snap-mandatory scroll-smooth overflow-scroll z-0
@@ -19,6 +20,9 @@ export default function Home() {
       </section>
 
       {/* Skills */}
+      <section id='skills' className='snap-center'>
+        <Skills/>
+      </section>
 
       {/* Projects */}
 
