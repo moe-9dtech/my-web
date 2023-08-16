@@ -3,6 +3,7 @@ import About from './components/about'
 import Experience from './components/experience'
 import Skills from './components/skills'
 import Projects from './components/projects'
+import ContactMe from './components/contactMe'
 
 export default function Home() {
   // h-screen snap-y snap-mandatory scroll-smooth overflow-scroll z-0
@@ -20,17 +21,17 @@ export default function Home() {
         <Experience/>
       </section>
 
-      {/* Skills */}
       <section id='skills' className='snap-center'>
         <Skills/>
       </section>
 
-      {/* Projects */}
       <section id='projects' className='snap-center'>
         <Projects/>
       </section>
 
-      {/* Contact Me */}
+      <section id="contact" className="snap-center">
+        <ContactMe/>
+      </section>
     </main>
   )
 }
