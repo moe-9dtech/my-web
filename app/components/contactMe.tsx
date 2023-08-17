@@ -10,8 +10,8 @@ export default function ContactMe({}: Props) {
       </h3>
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
-          I have got just what you need{" "}
-          <span className="underline decoration-[#00C6CF]/70">Lets Talk</span>
+          I have got just what you need.{" "}
+          <span className="underline decoration-[#00C6CF]/70">{`Let's Talk`}</span>
         </h4>
         <div className="space-y-10">
             <div className="flex justify-center items-center space-x-5">
@@ -20,7 +20,7 @@ export default function ContactMe({}: Props) {
             </div>
             <div className="flex justify-center items-center space-x-5">
                 <EnvelopeIcon className="text-[#00C6CF] h-7 animate-pulse"/>
-                <p>mohammadmoaid@gmail.com</p>
+                <a href="mailto:mohammadmoaid@gmail.com">mohammadmoaid@gmail.com</a>
             </div>
             <div className="flex justify-center items-center space-x-5">
                 <MapPinIcon className="text-[#00C6CF] h-7 animate-pulse"/>
