@@ -2,6 +2,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from 'framer-motion';
+import Link from "next/link";
 
 type Props = {};
 
@@ -55,13 +56,16 @@ export default function Socials({}: Props) {
         duration: 1.5
       }}
       className="cursor-pointer flex flex-row items-center">
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <p className="capitalize hidden md:inline-flex text-gray-500 text-sm">get in touch</p>
+        <a href="#contact">
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+          <p className="capitalize hidden md:inline-flex text-gray-500 text-sm">get in touch</p>
+        </a>
+
       </motion.div>
     </>
   );
