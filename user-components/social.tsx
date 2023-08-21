@@ -56,7 +56,6 @@ export default function Socials({}: Props) {
         duration: 1.5
       }}
       className="cursor-pointer flex flex-row items-center">
-        <a href="#contact">
           <SocialIcon
             className="cursor-pointer"
             network="email"
@@ -64,8 +63,6 @@ export default function Socials({}: Props) {
             bgColor="transparent"
           />
           <p className="capitalize hidden md:inline-flex text-gray-500 text-sm">get in touch</p>
-        </a>
-
       </motion.div>
     </>
   );
