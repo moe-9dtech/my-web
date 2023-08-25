@@ -1,30 +1,34 @@
 "use server";
-import { About } from "@/typings";
-
 export const addAbout = async (e:FormData) => {
-const title = e.get('title')?.toString();
-const description = e.get('description')?.toString();
-    const fileInput = (<HTMLInputElement>document.getElementById('fileInput'));
-    const formData = new  FormData();
-
-    if(!title || !description || !fileInput) return;
-
-    formData.append("title", title);
-    formData.append("description", description);
-    let aboutImage;
-    if(fileInput.files) {
-        formData.append("aboutImage", fileInput.files[0]);
-    }
-    const inputModel: About= {
-      title,
-      description,
-      aboutImage
-    }
-      await fetch("http://127.0.0.1:8000/about", {
+  const title = e.get('title')?.toString();
+  const description = e.get('description')?.toString();
+  const fileInput: File | null = e.get('aboutImage') as unknown as File;
+  let formData = new FormData();
+  console.log(`${title} ${description} ${fileInput}`)
+  if(!title || !description || !fileInput){
+    console.error("there is a missing field");
+    return;
+  } 
+  formData.append("title", title);
+  formData.append("description", description);
+  formData.append("aboutImage", fileInput, "aboutImage");
+  const entries = formData.entries();
+  for (const [key, value] of entries) {
+    console.log(`${key}: ${value}`);
+  }
+  console.log(formData);
+  const url:string = "http://172.16.150.11/my-web-api/public/api/postabout" 
+  try {
+    await fetch(url, {
       method: 'POST',
-      body: JSON.stringify(inputModel),
+      body: formData,
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "multipart/form-data",
       }
     })
+  } catch (e) {
+    console.error(e);
+
   }
+
+}
