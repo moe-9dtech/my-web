@@ -1,7 +1,4 @@
 "use client";
-import { addAbout } from '@/actions/aboutSectionActions';
-// import { addAbout } from '@/actions/aboutSectionActions';
-// import { addAbout } from '@/actions/aboutSectionActions';
 import React, { useState } from 'react'
 
 type Props = {}
@@ -21,11 +18,11 @@ export default function Page({}: Props) {
     }
     
       try {
-        const response = await fetch("http://172.16.150.11/my-web-api/public/api/postabout", {
+        const response = await fetch("http://localhost/my-web-api/public/api/postabout", {
         method: "POST",
-        body: (formData),
+        body: formData,
         headers: {
-        "Content-type": "multipart/form-data",
+        Content_type: "multipart/form-data",
         },
       });
 
@@ -40,12 +37,12 @@ export default function Page({}: Props) {
         console.log("Fetch failed");
       }
       } catch (err: any) {
-        console.log(`Error: ${err.getMessage}`);
+        console.log(`Error: ${err}`);
       }
   }
 
   async function getApi () {
-    const url = "http://localhost/my-web-api/public/api/about"
+    const url = "http://localhost/my-web-api/public/api/getabout"
     // const url = "http://172.16.150.109//cPanel-API-Simple-PHP/getallemail.php"
     try {
         await fetch(url, {
@@ -57,15 +54,13 @@ export default function Page({}: Props) {
         data.json().then((response) => {
           if (response.code === 200) {
             console.log(response.json);
-            
           } else {
             console.log("there was an error");
-            
           }
         });
       });
     } catch (err: any) {
-      console.log(`error is ${err.getMessage}`);
+      console.log(`error is ${err}`);
     }
   }
   
@@ -79,9 +74,9 @@ export default function Page({}: Props) {
             setFile(selectedFile);
 
         }} id='aboutImageInput' className='p-2 rounded-sm bg-gray-500/50' name='aboutImage' type="file" required/>
-        <button className='bg-blue-500 rounded-md p-2 font-semibold text-white/80'>Enter Value</button>
+        <button className='bg-blue-500 rounded-md p-2 font-semibold text-white/80' onClick={hitApi}>Enter Value</button>
+        <button className='bg-blue-500 rounded-md p-2 mt-5 font-semibold text-white/80' onClick={getApi}>get data</button>
       </form>
-      <button className='bg-blue-500 rounded-md p-2 mt-5 font-semibold text-white/80' onClick={hitApi}>get data</button>
     </div>
   )
 }
