@@ -70,6 +70,73 @@ export const addContactInfo = async (e:FormData) => {
   } catch (e) {
     console.error(e);
   }
-    
+}
 
+export const addExp= async (e:FormData) => {
+  const position = e.get('position')?.toString();
+  const company = e.get('company')?.toString();
+  const start_date = e.get('start_date')?.toString();
+  const currently_working = e.get('currently_working')?.toString();
+  const end_date = e.get('end_date')?.toString();
+  const summery = e.get('summery')?.toString();
+  const technologies = e.get('technologies')?.toString();
+  const expImage: File | null = e.get('exp_Image') as unknown as File;
+
+  let formData = new FormData();
+
+  console.log("api hit");
+  
+  
+  if(!position || !company || !start_date || !end_date || !summery || !technologies || !expImage || currently_working == undefined){
+    if (!position) {
+      console.log("position is missing");
+    }
+if (!company) {
+      console.log("company is missing");
+    }
+if (!start_date) {
+      console.log("start date is missing");
+    }
+if (!end_date) {
+      console.log("end date is missing");
+    }
+ if (!summery) {
+      console.log("summery is missing");
+    }
+if (!technologies) {
+      console.log("technologies is missing");
+    }
+if (!expImage) {
+      console.log("expImage is missing");
+    }
+if (currently_working == undefined) {
+      console.log("currently_working is missing");
+    }
+    return
+  }
+ 
+  formData.append('position', position);
+  formData.append('company', company);
+  formData.append('start_date', start_date);
+  formData.append('end_date', end_date);
+  formData.append('currently_working', currently_working == "true"? "1" : "0" );
+  formData.append('technologies', technologies);
+  formData.append('summery', summery);
+  formData.append('exp_Image', expImage);
+  
+  // for(const [key, value] in formData.entries()) {
+  //   console.log(key, value);
+  // }
+
+  const url:string = "http://172.16.150.11/my-web-api/public/api/postexp";
+  const response = await fetch(url, {
+    cache: "no-cache",
+    method: 'POST',
+    body: formData,
+    headers: {
+      "Content-Type": "multipart/form-data",
+    }
+  })
+  const responseData = await response.json();
+  console.log(responseData);
 }
