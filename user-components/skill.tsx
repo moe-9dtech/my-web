@@ -17,15 +17,16 @@ export default function Skill() {
         Hover over a skill for current profieciency
       </h3>
       <div className="grid grid-cols-4 gap-5">
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
-        <SingleSkill />
+        <SingleSkill directionLeft={true}/>
+        <SingleSkill directionLeft={false}/>
+        <SingleSkill directionLeft={true}/>
+        <SingleSkill directionLeft={false}/>
+        <SingleSkill directionLeft={true}/>
+        <SingleSkill directionLeft={false}/>
+        <SingleSkill directionLeft={true}/>
+        <SingleSkill directionLeft={false}/>
+        <SingleSkill directionLeft={true}/>
+        <SingleSkill directionLeft={false}/>
       </div>
     </motion.div>
   );
