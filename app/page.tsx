@@ -35,7 +35,7 @@ export default function Home() {
       </section>
       <a href="#hero">
         <div className="fixed right-10 bottom-10 rounded-full border-[2px] border-[#00C6CF] p-2 hover:scale-125 transition-all ease-in-out duration-300">
-            <ChevronDoubleUpIcon className="text-[#00C6CF] h-7 animate-pulse"/>
+          <ChevronDoubleUpIcon className="text-[#00C6CF] h-7 animate-pulse" />
         </div>
       </a>
     </main>
