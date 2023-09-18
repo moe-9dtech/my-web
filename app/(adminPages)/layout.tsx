@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function AdminLayout({
     children,
 }: {children: React.ReactNode}) {
+
   return (
     <div>
-    <div>{children}</div>
-    
+        <div className='w-100 justify-center items-center'>{children}</div>
     </div>
   )
 }

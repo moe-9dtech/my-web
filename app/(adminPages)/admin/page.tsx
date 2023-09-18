@@ -1,9 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import AdminLayout from "../layout";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ListItem } from "@/typings";
+import RenderForms from "@/app/components/renderForms";
 
 type Props = {};
 
-export default function Page({}: Props) {
+export default function AdminPage({}: Props) {
   const [title, setTitel] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
@@ -67,7 +71,51 @@ export default function Page({}: Props) {
     }
   }
 
+
+const [menuItems, setMenuItems] = useState<ListItem[]>([
+    {id: 1, status: false, text: 'Contact Info', component: "ContactForm"},
+    {id: 2, status: false, text: 'Hero Section', component: "HeroForm"},
+    {id: 3, status: false, text: 'About Section', component: "AboutForm"},
+    {id: 4, status: false, text: 'Experience Section', component: "ExperienceForm"},
+    {id: 5, status: false, text: 'Skills Section', component: "SkillsForm"},
+    {id: 6, status: false, text: 'Project Section', component: "ProjectsForm"},
+    {id: 7, status: false, text: 'techs', component: "TechsForm"},
+  ]) 
+
+  const handleMenueClick = (itemId:number) => {
+    const updatedItems = menuItems.map((item) =>
+      item.id === itemId ? { ...item, status: !item.status } : { ...item, status: false });
+
+    setMenuItems(updatedItems)
+    console.log(menuItems);
+    
+  }
+
   return (
+    <div>
+      <div className="flex flex-col items-center justify-center">
+        <h3 className='text-blue-200 font-semibold text-[24px] tracking-[3px]'>Welcome to the Admin Panel</h3>
+        <p className='text-blue-300 font-normal text-[20px]'>Edit your and manage your frontend Content from here!</p>
+        <p className='text-blue-300 font-normal text-[20px]'>Edit the content here to find immediate change on your frontend</p>
+      </div>
+      <div className="flex flex-row">
+        <div className="w-1/6 border-t border-r border-solid h-screen rounded-md">
+          <ul className='text-black font-semibold'>
+            {menuItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => handleMenueClick(item.id)}
+                className='group p-2 hover:bg-slate-300 hover:cursor-pointer transition-all ease-in-out duration-300 flex flex-row items-center justify-between'
+              >
+                {item.text}
+              <ChevronRightIcon className='h-7 group-hover:translate-x-3 transition-all ease-in-out duration-300'/>
+              </li>
+            ))}
+            
+          </ul>
+        </div>
+        <RenderForms menueStatus={ menuItems } />
+      </div>
     <div className="flex flex-col max-w-7xl justify-center items-center mx-auto">
       <form className="flex flex-col space-y-5">
         <input
@@ -110,6 +158,7 @@ export default function Page({}: Props) {
           get data
         </button>
       </form>
+    </div>
     </div>
   );
 }
