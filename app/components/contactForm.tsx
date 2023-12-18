@@ -4,6 +4,6 @@ type Props = {}
 
 export default function ContactForm({}: Props) {
   return (
-    <div>ContactForm</div>
+    <div className='text-red-500'>ContactForm</div>
   )
 }
