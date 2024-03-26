@@ -34,11 +34,6 @@ export default function Socials({}: Props) {
           bgColor="transparent"
           fgColor="gray"
         />
-        <SocialIcon
-          url="https://www.facebook.com/mohammad.moaid"
-          bgColor="transparent"
-          fgColor="gray"
-        />
       </motion.div>
 
       <motion.div

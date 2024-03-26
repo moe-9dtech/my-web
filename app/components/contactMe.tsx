@@ -16,7 +16,7 @@ export default function ContactMe({}: Props) {
         <div className="space-y-10">
             <div className="flex justify-center items-center space-x-5">
                 <PhoneIcon className="text-[#00C6CF] h-7 animate-pulse"/>
-                <p>+0001255487</p>
+                <p>+923045296525</p>
             </div>
             <div className="flex justify-center items-center space-x-5">
                 <EnvelopeIcon className="text-[#00C6CF] h-7 animate-pulse"/>
@@ -24,7 +24,7 @@ export default function ContactMe({}: Props) {
             </div>
             <div className="flex justify-center items-center space-x-5">
                 <MapPinIcon className="text-[#00C6CF] h-7 animate-pulse"/>
-                <p className="capitalize">islamabad pakistan</p>
+                <p className="capitalize">islamabad, pakistan</p>
             </div>
         </div>
         <form className="flex flex-col space-y-2 w-fit mx-auto" action="">
