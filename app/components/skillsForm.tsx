@@ -4,6 +4,6 @@ type Props = {}
 
 export default function SkillsForm({}: Props) {
   return (
-    <div>SkillsForm</div>
+    <div className='text-red-500'>SkillsForm</div>
   )
 }
