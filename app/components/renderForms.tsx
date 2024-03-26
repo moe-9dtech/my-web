@@ -29,16 +29,15 @@ export default function RenderForms({ menueStatus }: Props) {
     console.log(activeTab);
     
     return (
-        <div className="h-screen flex flex-row justify-center bg-[#E4E4E4]">
-            <div>
+
+<div className="flex-1 flex-row justify-center">
+            <h1>
                 {
                     activeTab ? (
                         React.createElement(componentMap[activeTab.component])
                     ) : (
-                        <p className="text-[20px] text-gray-500 font-semibold">Nothing to Show</p>
+                        ""
                 )}
-            </div>
+            </h1>
         </div>
-    );
-
 }
