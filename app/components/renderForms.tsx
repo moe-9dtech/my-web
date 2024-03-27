@@ -29,7 +29,8 @@ export default function RenderForms({ menueStatus }: Props) {
     console.log(activeTab);
     
     return (
-        <div className="flex-1 flex-row justify-center">
+
+<div className="flex-1 flex-row justify-center">
             <h1>
                 {
                     activeTab ? (
@@ -39,6 +40,4 @@ export default function RenderForms({ menueStatus }: Props) {
                 )}
             </h1>
         </div>
-    );
-
 }

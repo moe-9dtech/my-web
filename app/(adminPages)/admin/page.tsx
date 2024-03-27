@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState} from "react";
 import AdminLayout from "../layout";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { ListItem } from "@/typings";
 import RenderForms from "@/app/components/renderForms";
+import Image from "next/image";
 
 type Props = {};
 
@@ -94,27 +95,33 @@ const [menuItems, setMenuItems] = useState<ListItem[]>([
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
-        <h3 className='text-blue-200 font-semibold text-[24px] tracking-[3px]'>Welcome to the Admin Panel</h3>
-        <p className='text-blue-300 font-normal text-[20px]'>Edit your and manage your frontend Content from here!</p>
-        <p className='text-blue-300 font-normal text-[20px]'>Edit the content here to find immediate change on your frontend</p>
+        <Image
+        width={1920}
+        height={360}
+        alt='Image'
+        src={`https://picsum.photos/1920/360/?random${new Date().getTime()}`}
+        />
       </div>
-      <div className="flex flex-row">
-        <div className="w-1/6 border-t border-r border-solid h-screen rounded-md">
-          <ul className='text-black font-semibold'>
+      <div className="flex flex-col">
+        <div className="flex flex-row justify-center items-center">
+          <ul className='text-black font-semibold flex flex-row space-x-5 mt-5'>
+            {/* <li className="flex flex-row justify-center p-2 border border-b capitalize">start editing your content</li> */}
             {menuItems.map((item) => (
               <li
                 key={item.id}
                 onClick={() => handleMenueClick(item.id)}
-                className='group p-2 hover:bg-slate-300 hover:cursor-pointer transition-all ease-in-out duration-300 flex flex-row items-center justify-between'
+                className={`group py-1 px-5 hover:text-[#2E8CFA] hover:font-bold ${item.status == true ? 'bg-slate-300' : ''} hover:cursor-pointer transition-all ease-in-out duration-300 flex flex-row items-center justify-between border border-[#D8D8D8] rounded-md`}
               >
                 {item.text}
-              <ChevronRightIcon className='h-7 group-hover:translate-x-3 transition-all ease-in-out duration-300'/>
+              {/* <ChevronRightIcon className='h-7 group-hover:translate-x-3 transition-all ease-in-out duration-300'/> */}
               </li>
             ))}
             
           </ul>
         </div>
-        <RenderForms menueStatus={ menuItems } />
+        <div className="">
+          <RenderForms menueStatus={ menuItems } />
+        </div>
       </div>
     <div className="flex flex-col max-w-7xl justify-center items-center mx-auto">
       <form className="flex flex-col space-y-5">

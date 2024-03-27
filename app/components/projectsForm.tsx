@@ -4,6 +4,6 @@ type Props = {}
 
 export default function ProjectsForm({}: Props) {
   return (
-    <div>ProjectsForm</div>
+    <div className='text-red-500'>ProjectsForm</div>
   )
 }

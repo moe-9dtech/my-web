@@ -14,7 +14,7 @@ export default function AdminLayout({
 
   return (
     <div>
-        <div className='w-100 justify-center items-center'>{children}</div>
+        <div className='w-100 justify-center items-center '>{children}</div>
     </div>
   )
 }

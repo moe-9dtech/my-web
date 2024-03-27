@@ -13,5 +13,6 @@ export default function ContactForm({}: Props) {
         <button className='bg-[#ffa500] rounded-md p-2 font-semibold text-white/80'>Add Contact</button>
       </form>
     </div>
+
   )
 }

@@ -19,7 +19,7 @@ export default function RootLayout({
   const isAdmin = router == '/admin'
   return (
     <html lang="en" className='snap-y snap-mandatory scroll-smooth overflow-y-scroll overflow-x-hidden'>
-      <body className={`text-gray-300 ${isAdmin ? 'bg-white' : 'bg-[rgb(36,36,36)]'}`}>
+      <body className={`text-gray-300 ${isAdmin ? 'bg-[#E4E4E4]' : 'bg-[rgb(36,36,36)]'}`}>
         {
           isAdmin ? 
           <AdminHeader/>

@@ -76,11 +76,11 @@ export const addExp= async (e:FormData) => {
   const position = e.get('position')?.toString();
   const company = e.get('company')?.toString();
   const start_date = e.get('start_date')?.toString();
-  const currently_working = e.get('currently_working')?.toString();
   const end_date = e.get('end_date')?.toString();
+  const currently_working = e.get('currently_working')?.toString();
+  const expImage: File | null = e.get('exp_Image') as unknown as File;
   const summery = e.get('summery')?.toString();
   const technologies = e.get('technologies')?.toString();
-  const expImage: File | null = e.get('exp_Image') as unknown as File;
 
   let formData = new FormData();
 
