@@ -1,9 +1,10 @@
+'use client';
 import React from 'react'
 import { Metadata } from 'next'
 
 type Props = {}
 
- const metadata: Metadata = {
+export const metadata: Metadata = {
     title: 'Admin Page',
     description: 'control the content of the website'
 }
