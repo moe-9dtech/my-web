@@ -15,8 +15,6 @@ export default function Page({}: Props) {
   const [currently_working, setCurrently_working] = useState<boolean>();
   const formData = new FormData();
   
-  console.log(currently_working);
-  
   async function addContactInfo (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault()
     formData.append('position', position);
@@ -32,13 +30,12 @@ export default function Page({}: Props) {
 
     const response = await fetch("http://localhost/my-web-api/public/api/postexp", {
       method: "POST",
-      body: formData,
+      body: await formData,
       headers: {
       Content_type: "multipart/form-data",
       },
     });
       const responseData = await response.json();
-      console.log(responseData);
   }
 
   async function getApi () {
