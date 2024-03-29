@@ -25,7 +25,7 @@ export default function Experience({}: Props) {
         "wordPress",
         "PHP",
       ],
-      summary: ["API integration", 'Responsive design', 'Cross-Browsers Test', 'Frontend Optimization', 'Jest/Cypress test', 'Projects deployment "VPS"']
+      summary: ["API integration", 'MERN tasks', 'MongoDB, PostgreSQL, and MySQL', 'Frontend Optimization', 'Jest/Cypress test', 'Projects deployment "VPS"']
     },
     {
       company: "SelfEmployee",

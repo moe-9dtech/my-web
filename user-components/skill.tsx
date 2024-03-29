@@ -233,16 +233,7 @@ pro: 80
             percentage={skill.pro}
           />
         ))}
-        {/* <SingleSkill directionLeft={true}/>
-        <SingleSkill directionLeft={false}/>
-        <SingleSkill directionLeft={true}/>
-        <SingleSkill directionLeft={false}/>
-        <SingleSkill directionLeft={true}/>
-        <SingleSkill directionLeft={false}/>
-        <SingleSkill directionLeft={true}/>
-        <SingleSkill directionLeft={false}/>
-        <SingleSkill directionLeft={true}/>
-        <SingleSkill directionLeft={false}/> */}
+        
       </div>
     </motion.div>
   );
