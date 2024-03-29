@@ -37,7 +37,7 @@ export default function Project({}: Props) {
       animate={{opacity: 1}}
       transition={{duration: 1.5}}
        className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
-        <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
+        <h3 className="absolute top-10 uppercase tracking-[20px] text-gray-500 text-2xl">
           Projects
         </h3>
           <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#00C6CF]/80">
@@ -45,7 +45,7 @@ export default function Project({}: Props) {
           <div
           
             key={i}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-20 lg:p-40 h-screen overflow-y-scroll"
           >
             <motion.div
             initial={{
@@ -59,7 +59,7 @@ export default function Project({}: Props) {
             transition={{duration: 1.5}}
             // viewport={{once: true}}
             >
-              {project.project === 'Music Platform' && <Image src={music} alt="music platform" height={375} width={666}/>}
+              {project.project === 'Music Platform' && <Image className="max-w-100 max-h-[375px]" src={music} alt="music platform" height={375} width={666}/>}
               {project.project === 'File Converter' && <Image src={converter} alt="music platform" height={375} width={666}/>}
               {project.project === 'COCOLEMON' && <Image src={coco} alt="music platform" height={375} width={666}/>}
               {project.project === 'Customer Support Chat' && <Image src={chat} alt="music platform" height={375} width={666}/>}
